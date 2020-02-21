@@ -1,6 +1,7 @@
 <template>
     <div>
-        <select name="dropdown" v-model="pokemonList">
+        <p>Choose a Pokémon!</p>
+        <select name="dropdown" v-model="selected" @change="switchPokemon">
             <option v-for="pokemon in pokemonList" :value="pokemon" :key="pokemon">{{ pokemon }}</option>
         </select>
     </div>
@@ -11,7 +12,17 @@ export default {
   name: 'Dropdown',
   props: {
     pokemonList: Array
-  }
+  },
+  methods: {
+      switchPokemon() {
+          this.$emit('switch-pokemon', this.selected);
+        }
+    },
+  data() {
+      return {
+          selected: 'bulbasaur'
+      }
+    }
 }
 </script>
 
