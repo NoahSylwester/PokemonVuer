@@ -49,7 +49,7 @@ export default {
       }
       else {
         this.currentPokemon.name = this.pokemonData[pokemon].name;
-        this.currentPokemon = this.pokemonData[pokemon].sprites.front_default;
+        this.currentPokemon.image = this.pokemonData[pokemon].sprites.front_default;
         this.currentPokemon.height = this.pokemonData[pokemon].height;
         this.currentPokemon.weight = this.pokemonData[pokemon].weight;
         this.currentPokemon.abilities = this.pokemonData[pokemon].abilities;
